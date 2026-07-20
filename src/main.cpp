@@ -1,16 +1,45 @@
 #include <iostream>
-#include "../include/Book.h"
+#include "../include/Library.h"
 
 using namespace std;
 
 int main()
 {
-    Book b1;
+    Library library;
+    int choice;
 
-    b1.inputBook();
+    while (true)
+    {
+        // Menu print
 
-    cout << "\nBook Details\n";
-    b1.displayBook();
+        cout << "1. Add Book\n";
+        cout << "2. View Books\n";
+        cout << "3. Search Book\n";
+        cout << "4. Update Book\n";
+        cout << "5. Delete Book\n";
+        cout << "6. Issue Book\n";
+        cout << "7. Return Book\n";
+        cout << "8. Exit\n";
 
-    return 0;
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            library.addBook();
+            break;
+
+        case 2:
+            library.viewBooks();
+            break;
+
+        case 8:
+            cout << "Thank you!\n";
+            return 0;
+
+        default:
+            cout << "Invalid Choice\n";
+        }
+    }
 }
