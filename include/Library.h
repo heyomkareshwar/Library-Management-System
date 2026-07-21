@@ -1,6 +1,6 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
-
+#include <fstream>
 #include <vector>
 #include "Book.h"
 

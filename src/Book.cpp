@@ -47,3 +47,13 @@ void Book::returnBook()
 {
     issued = false;
 }
+
+string Book::getTitle() const
+{
+    return title;
+}
+
+string Book::getAuthor() const
+{
+    return author;
+}

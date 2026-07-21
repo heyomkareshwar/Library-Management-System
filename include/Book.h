@@ -15,6 +15,8 @@ private:
     bool issued;
 
 public:
+    string getTitle() const;
+    string getAuthor() const;
     Book();
 
     void inputBook();
@@ -26,4 +28,5 @@ public:
     void issueBook();
     void returnBook();
 };
+
 #endif // BOOK_H
