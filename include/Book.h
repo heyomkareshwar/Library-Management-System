@@ -17,6 +17,12 @@ private:
 public:
     string getTitle() const;
     string getAuthor() const;
+
+    void setId(int id);
+    void setTitle(string title);
+    void setAuthor(string author);
+    void setIssued(bool issued);
+
     Book();
 
     void inputBook();

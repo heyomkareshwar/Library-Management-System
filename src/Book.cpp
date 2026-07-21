@@ -57,3 +57,22 @@ string Book::getAuthor() const
 {
     return author;
 }
+void Book::setId(int id)
+{
+    this->id = id;
+}
+
+void Book::setTitle(string title)
+{
+    this->title = title;
+}
+
+void Book::setAuthor(string author)
+{
+    this->author = author;
+}
+
+void Book::setIssued(bool issued)
+{
+    this->issued = issued;
+}
