@@ -6,6 +6,8 @@ using namespace std;
 int main()
 {
     Library library;
+
+    library.loadBooks();
     int choice;
 
     while (true)

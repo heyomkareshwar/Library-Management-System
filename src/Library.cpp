@@ -1,5 +1,8 @@
 #include "../include/Library.h"
-#include <fstream> // <-- upar add karo
+#include <fstream>
+#include <sstream>
+
+using namespace std;
 
 void Library::addBook()
 {
@@ -8,7 +11,6 @@ void Library::addBook()
 
     books.push_back(newBook);
 
-    // Step 3 - Save book to file
     ofstream file("data/books.txt", ios::app);
 
     file << newBook.getId() << "|"
@@ -34,4 +36,39 @@ void Library::viewBooks()
         book.displayBook();
         cout << "------------------------\n";
     }
+}
+
+void Library::loadBooks()
+{
+    ifstream file("data/books.txt");
+
+    if (!file)
+    {
+        return;
+    }
+
+    string line;
+
+    while (getline(file, line))
+    {
+        stringstream ss(line);
+
+        string id, title, author, issued;
+
+        getline(ss, id, '|');
+        getline(ss, title, '|');
+        getline(ss, author, '|');
+        getline(ss, issued, '|');
+
+        Book book;
+
+        book.setId(stoi(id));
+        book.setTitle(title);
+        book.setAuthor(author);
+        book.setIssued(stoi(issued));
+
+        books.push_back(book);
+    }
+
+    file.close();
 }
