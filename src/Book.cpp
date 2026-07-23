@@ -12,12 +12,15 @@ void Book::inputBook()
 {
     cout << "Enter book ID: ";
     cin >> id;
-    cin.ignore(); // Ignore the newline character left in the input buffer
+    cin.ignore();
+
     cout << "Enter book title: ";
     getline(cin, title);
+
     cout << "Enter book author: ";
     getline(cin, author);
-    issued = false; // New books are not issued by default
+
+    issued = false;
 }
 
 void Book::displayBook() const
@@ -33,21 +36,6 @@ int Book::getId() const
     return id;
 }
 
-bool Book::isIssued() const
-{
-    return issued;
-}
-
-void Book::issueBook()
-{
-    issued = true;
-}
-
-void Book::returnBook()
-{
-    issued = false;
-}
-
 string Book::getTitle() const
 {
     return title;
@@ -57,6 +45,12 @@ string Book::getAuthor() const
 {
     return author;
 }
+
+bool Book::isIssued() const
+{
+    return issued;
+}
+
 void Book::setId(int id)
 {
     this->id = id;
@@ -75,4 +69,14 @@ void Book::setAuthor(string author)
 void Book::setIssued(bool issued)
 {
     this->issued = issued;
+}
+
+void Book::issueBook()
+{
+    issued = true;
+}
+
+void Book::returnBook()
+{
+    issued = false;
 }

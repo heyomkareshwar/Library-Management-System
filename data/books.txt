@@ -1,0 +1,10 @@
+101|C++ Programming|Bjarne Stroustrup|1
+102|Data Structures|Mark Allen Weiss|0
+103|Operating System Concepts|Abraham Silberschatz|1
+104|Database System Concepts|Henry F. Korth|0
+105|Computer Networks|Andrew S. Tanenbaum|1
+106|Clean Code|Robert C. Martin|0
+107|The C Programming Language|Dennis Ritchie|0
+108|Introduction to Algorithms|Thomas H. Cormen|1
+109|Artificial Intelligence|Stuart Russell|0
+110|Design Patterns|Erich Gamma|0

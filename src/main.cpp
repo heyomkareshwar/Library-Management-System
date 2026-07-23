@@ -44,6 +44,9 @@ int main()
         case 5:
             library.deleteBook();
             break;
+        case 6:
+            library.issueBook();
+            break;
 
         case 8:
             cout << "Thank you!\n";

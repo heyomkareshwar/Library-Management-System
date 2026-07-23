@@ -18,6 +18,7 @@ public:
     void searchBook();
     void deleteBook();
     void updateBook();
+    void issueBook();
 };
 
 #endif
