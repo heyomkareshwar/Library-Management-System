@@ -15,6 +15,7 @@ public:
     void addBook();
     void viewBooks();
     void loadBooks();
+    void searchBook();
 };
 
 #endif

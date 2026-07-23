@@ -35,6 +35,9 @@ int main()
         case 2:
             library.viewBooks();
             break;
+        case 3:
+            library.searchBook();
+            break;
 
         case 8:
             cout << "Thank you!\n";

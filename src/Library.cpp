@@ -72,3 +72,29 @@ void Library::loadBooks()
 
     file.close();
 }
+void Library::searchBook()
+{
+    int searchId;
+
+    cout << "\nEnter Book ID to search: ";
+    cin >> searchId;
+
+    bool found = false;
+
+    for (const Book &book : books)
+    {
+        if (book.getId() == searchId)
+        {
+            cout << "\nBook Found\n\n";
+            book.displayBook();
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nBook not found!\n";
+    }
+}
