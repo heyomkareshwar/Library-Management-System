@@ -1,6 +1,7 @@
 #include "../include/Library.h"
 #include <fstream>
 #include <sstream>
+#include <cstdio>
 
 using namespace std;
 
@@ -97,4 +98,43 @@ void Library::searchBook()
     {
         cout << "\nBook not found!\n";
     }
+}
+void Library::deleteBook()
+{
+    int deleteId;
+
+    cout << "\nEnter Book ID to delete: ";
+    cin >> deleteId;
+
+    bool found = false;
+
+    for (auto it = books.begin(); it != books.end(); it++)
+    {
+        if (it->getId() == deleteId)
+        {
+            books.erase(it);
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nBook not found!\n";
+        return;
+    }
+
+    ofstream file("data/books.txt");
+
+    for (const Book &book : books)
+    {
+        file << book.getId() << "|"
+             << book.getTitle() << "|"
+             << book.getAuthor() << "|"
+             << book.isIssued() << endl;
+    }
+
+    file.close();
+
+    cout << "\nBook deleted successfully!\n";
 }

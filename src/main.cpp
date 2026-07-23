@@ -38,6 +38,9 @@ int main()
         case 3:
             library.searchBook();
             break;
+        case 5:
+            library.deleteBook();
+            break;
 
         case 8:
             cout << "Thank you!\n";
