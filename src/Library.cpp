@@ -138,3 +138,54 @@ void Library::deleteBook()
 
     cout << "\nBook deleted successfully!\n";
 }
+void Library::updateBook()
+{
+    int updateId;
+
+    cout << "\nEnter Book ID to update: ";
+    cin >> updateId;
+
+    bool found = false;
+
+    for (Book &book : books)
+    {
+        if (book.getId() == updateId)
+        {
+            string title, author;
+
+            cin.ignore();
+
+            cout << "Enter New Title: ";
+            getline(cin, title);
+
+            cout << "Enter New Author: ";
+            getline(cin, author);
+
+            book.setTitle(title);
+            book.setAuthor(author);
+
+            found = true;
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nBook not found!\n";
+        return;
+    }
+
+    ofstream file("data/books.txt");
+
+    for (const Book &book : books)
+    {
+        file << book.getId() << "|"
+             << book.getTitle() << "|"
+             << book.getAuthor() << "|"
+             << book.isIssued() << endl;
+    }
+
+    file.close();
+
+    cout << "\nBook updated successfully!\n";
+}

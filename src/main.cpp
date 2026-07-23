@@ -38,6 +38,9 @@ int main()
         case 3:
             library.searchBook();
             break;
+        case 4:
+            library.updateBook();
+            break;
         case 5:
             library.deleteBook();
             break;
