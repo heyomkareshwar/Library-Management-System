@@ -248,3 +248,25 @@ void Library::returnBook()
 
     cout << "\nBook returned successfully!\n";
 }
+void Library::showDashboard()
+{
+    int totalBooks = books.size();
+    int issuedBooks = 0;
+    int availableBooks = 0;
+
+    for (const Book &book : books)
+    {
+        if (book.isIssued())
+            issuedBooks++;
+        else
+            availableBooks++;
+    }
+
+    cout << "\n=====================================\n";
+    cout << "        LIBRARY DASHBOARD\n";
+    cout << "=====================================\n";
+    cout << "Total Books      : " << totalBooks << endl;
+    cout << "Available Books  : " << availableBooks << endl;
+    cout << "Issued Books     : " << issuedBooks << endl;
+    cout << "=====================================\n";
+}

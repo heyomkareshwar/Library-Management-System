@@ -21,6 +21,7 @@ public:
     void issueBook();
     void returnBook();
     void saveBooks();
+    void showDashboard();
 };
 
 #endif

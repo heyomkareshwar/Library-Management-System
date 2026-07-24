@@ -21,8 +21,8 @@ int main()
         cout << "5. Delete Book\n";
         cout << "6. Issue Book\n";
         cout << "7. Return Book\n";
-        cout << "8. Exit\n";
-
+        cout << "8. Dashboard\n";
+        cout << "9. Exit\n";
         cout << "\nEnter your choice: ";
         cin >> choice;
 
@@ -52,6 +52,10 @@ int main()
             break;
 
         case 8:
+            library.showDashboard();
+            break;
+
+        case 9:
             cout << "Thank you!\n";
             return 0;
 
