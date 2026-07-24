@@ -8,7 +8,34 @@ using namespace std;
 void Library::addBook()
 {
     Book newBook;
-    newBook.inputBook();
+
+    int id;
+
+    while (true)
+    {
+        cout << "Enter Book ID: ";
+        cin >> id;
+
+        if (!isBookIdExists(id))
+            break;
+
+        cout << "\nBook ID already exists! Please enter another ID.\n\n";
+    }
+
+    cin.ignore();
+
+    string title, author;
+
+    cout << "Enter Book Title: ";
+    getline(cin, title);
+
+    cout << "Enter Author Name: ";
+    getline(cin, author);
+
+    newBook.setId(id);
+    newBook.setTitle(title);
+    newBook.setAuthor(author);
+    newBook.setIssued(false);
 
     books.push_back(newBook);
 
@@ -16,7 +43,6 @@ void Library::addBook()
 
     cout << "\nBook Added Successfully!\n";
 }
-
 void Library::viewBooks()
 {
     if (books.empty())
@@ -65,6 +91,18 @@ void Library::loadBooks()
     }
 
     file.close();
+}
+bool Library::isBookIdExists(int id)
+{
+    for (const Book &book : books)
+    {
+        if (book.getId() == id)
+        {
+            return true;
+        }
+    }
+
+    return false;
 }
 void Library::saveBooks()
 {

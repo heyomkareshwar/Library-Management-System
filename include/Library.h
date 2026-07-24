@@ -22,6 +22,7 @@ public:
     void returnBook();
     void saveBooks();
     void showDashboard();
+    bool isBookIdExists(int id);
 };
 
 #endif
