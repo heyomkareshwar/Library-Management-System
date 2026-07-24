@@ -145,6 +145,39 @@ void Library::searchBook()
         cout << "\nBook not found!\n";
     }
 }
+void Library::searchBookByTitle()
+{
+    string searchTitle;
+
+    cin.ignore();
+
+    cout << "\nEnter Book Title: ";
+    getline(cin, searchTitle);
+
+    bool found = false;
+
+    for (const Book &book : books)
+    {
+        if (book.getTitle().find(searchTitle) != string::npos)
+        {
+            if (!found)
+            {
+                cout << "\nMatching Books:\n\n";
+            }
+
+            book.displayBook();
+            cout << "------------------------\n";
+
+            found = true;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nNo book found with this title!\n";
+    }
+}
+
 void Library::deleteBook()
 {
     int deleteId;

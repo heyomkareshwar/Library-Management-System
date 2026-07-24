@@ -16,13 +16,14 @@ int main()
 
         cout << "1. Add Book\n";
         cout << "2. View Books\n";
-        cout << "3. Search Book\n";
-        cout << "4. Update Book\n";
-        cout << "5. Delete Book\n";
-        cout << "6. Issue Book\n";
-        cout << "7. Return Book\n";
-        cout << "8. Dashboard\n";
-        cout << "9. Exit\n";
+        cout << "3. Search Book by ID\n";
+        cout << "4. Search Book by Title\n";
+        cout << "5. Update Book\n";
+        cout << "6. Delete Book\n";
+        cout << "7. Issue Book\n";
+        cout << "8. Return Book\n";
+        cout << "9. Dashboard\n";
+        cout << "10. Exit\n";
         cout << "\nEnter your choice: ";
         cin >> choice;
 
@@ -38,24 +39,32 @@ int main()
         case 3:
             library.searchBook();
             break;
+
         case 4:
+            library.searchBookByTitle();
+            break;
+
+        case 5:
             library.updateBook();
             break;
-        case 5:
+
+        case 6:
             library.deleteBook();
             break;
-        case 6:
-            library.issueBook();
-            break;
+
         case 7:
-            library.returnBook();
+            library.issueBook();
             break;
 
         case 8:
-            library.showDashboard();
+            library.returnBook();
             break;
 
         case 9:
+            library.showDashboard();
+            break;
+
+        case 10:
             cout << "Thank you!\n";
             return 0;
 
