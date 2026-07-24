@@ -20,6 +20,7 @@ public:
     void updateBook();
     void issueBook();
     void returnBook();
+    void saveBooks();
 };
 
 #endif

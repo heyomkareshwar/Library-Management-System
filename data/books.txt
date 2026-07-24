@@ -6,5 +6,4 @@
 106|Clean Code|Robert C. Martin|0
 107|The C Programming Language|Dennis Ritchie|0
 108|Introduction to Algorithms|Thomas H. Cormen|1
-109|Artificial Intelligence|Stuart Russell|0
 110|Design Patterns|Erich Gamma|0

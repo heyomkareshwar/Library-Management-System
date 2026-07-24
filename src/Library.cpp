@@ -12,14 +12,7 @@ void Library::addBook()
 
     books.push_back(newBook);
 
-    ofstream file("data/books.txt", ios::app);
-
-    file << newBook.getId() << "|"
-         << newBook.getTitle() << "|"
-         << newBook.getAuthor() << "|"
-         << newBook.isIssued() << endl;
-
-    file.close();
+    saveBooks();
 
     cout << "\nBook Added Successfully!\n";
 }
@@ -73,6 +66,21 @@ void Library::loadBooks()
 
     file.close();
 }
+void Library::saveBooks()
+{
+    ofstream file("data/books.txt");
+
+    for (const Book &book : books)
+    {
+        file << book.getId() << "|"
+             << book.getTitle() << "|"
+             << book.getAuthor() << "|"
+             << book.isIssued() << endl;
+    }
+
+    file.close();
+}
+
 void Library::searchBook()
 {
     int searchId;
@@ -124,18 +132,7 @@ void Library::deleteBook()
         return;
     }
 
-    ofstream file("data/books.txt");
-
-    for (const Book &book : books)
-    {
-        file << book.getId() << "|"
-             << book.getTitle() << "|"
-             << book.getAuthor() << "|"
-             << book.isIssued() << endl;
-    }
-
-    file.close();
-
+    saveBooks();
     cout << "\nBook deleted successfully!\n";
 }
 void Library::updateBook()
@@ -175,17 +172,7 @@ void Library::updateBook()
         return;
     }
 
-    ofstream file("data/books.txt");
-
-    for (const Book &book : books)
-    {
-        file << book.getId() << "|"
-             << book.getTitle() << "|"
-             << book.getAuthor() << "|"
-             << book.isIssued() << endl;
-    }
-
-    file.close();
+    saveBooks();
 
     cout << "\nBook updated successfully!\n";
 }
@@ -221,17 +208,7 @@ void Library::issueBook()
         return;
     }
 
-    ofstream file("data/books.txt");
-
-    for (const Book &book : books)
-    {
-        file << book.getId() << "|"
-             << book.getTitle() << "|"
-             << book.getAuthor() << "|"
-             << book.isIssued() << endl;
-    }
-
-    file.close();
+    saveBooks();
 
     cout << "\nBook issued successfully!\n";
 }
@@ -267,17 +244,7 @@ void Library::returnBook()
         return;
     }
 
-    ofstream file("data/books.txt");
-
-    for (const Book &book : books)
-    {
-        file << book.getId() << "|"
-             << book.getTitle() << "|"
-             << book.getAuthor() << "|"
-             << book.isIssued() << endl;
-    }
-
-    file.close();
+    saveBooks();
 
     cout << "\nBook returned successfully!\n";
 }
