@@ -235,3 +235,49 @@ void Library::issueBook()
 
     cout << "\nBook issued successfully!\n";
 }
+void Library::returnBook()
+{
+    int returnId;
+
+    cout << "\nEnter Book ID to return: ";
+    cin >> returnId;
+
+    bool found = false;
+
+    for (Book &book : books)
+    {
+        if (book.getId() == returnId)
+        {
+            found = true;
+
+            if (!book.isIssued())
+            {
+                cout << "\nBook is already available!\n";
+                return;
+            }
+
+            book.returnBook();
+            break;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "\nBook not found!\n";
+        return;
+    }
+
+    ofstream file("data/books.txt");
+
+    for (const Book &book : books)
+    {
+        file << book.getId() << "|"
+             << book.getTitle() << "|"
+             << book.getAuthor() << "|"
+             << book.isIssued() << endl;
+    }
+
+    file.close();
+
+    cout << "\nBook returned successfully!\n";
+}

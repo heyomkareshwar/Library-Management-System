@@ -19,6 +19,7 @@ public:
     void deleteBook();
     void updateBook();
     void issueBook();
+    void returnBook();
 };
 
 #endif
